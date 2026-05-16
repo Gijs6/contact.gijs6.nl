@@ -126,7 +126,6 @@ header {
 
 .notes p.redacted {
     margin-top: 1em;
-
 }
 
 p.redacted {
@@ -201,7 +200,7 @@ p.redacted {
 }
 
 .records article.redacted > *:hover {
-    color: transparent
+    color: transparent;
 }
 
 .file-id {
