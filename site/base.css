@@ -186,6 +186,10 @@ p.redacted {
     --r: 0.4;
 }
 
+.records article:nth-child(9) {
+    --r: -0.3;
+}
+
 .records article:hover {
     transform: rotate(0deg) translateY(-4px);
     border-color: var(--accent);
