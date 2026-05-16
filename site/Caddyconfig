@@ -1,0 +1,4 @@
+@contact.gijs6.nl host contact.gijs6.nl
+handle @contact.gijs6.nl {
+	redir /mail mailto:me@gijs6.nl?{query} permanent
+}
