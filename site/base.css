@@ -62,8 +62,9 @@ header {
 .topline {
     font-size: 0.8rem;
     letter-spacing: 0.15em;
-    margin-bottom: 2rem;
+    margin: 0 0 2rem;
     color: var(--faded);
+    text-transform: uppercase;
 }
 
 .stamp {
@@ -78,6 +79,8 @@ header {
     transform: rotate(12deg);
     opacity: 0.8;
     pointer-events: none;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 .subject {
@@ -99,6 +102,7 @@ header {
     font-family: "Special Elite", serif;
     font-size: clamp(2rem, 6vw, 3.5rem);
     letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .meta {
@@ -106,12 +110,23 @@ header {
     gap: 0.5rem;
 }
 
-.meta p {
-    margin: 0;
+.meta div {
+    display: flex;
+    gap: 0.5em;
 }
 
-.meta span {
+.meta dt {
     font-weight: 700;
+    text-transform: uppercase;
+}
+
+.meta dt::after {
+    content: ":";
+}
+
+.meta dd {
+    margin: 0;
+    text-transform: uppercase;
 }
 
 .notes {
@@ -145,9 +160,16 @@ p.redacted {
     margin-bottom: 2rem;
     font-size: 1rem;
     letter-spacing: 0.2em;
+    text-transform: uppercase;
 }
 
-.records article {
+.records ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.records li {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border: 2px solid rgba(0, 0, 0, 0.25);
@@ -157,63 +179,63 @@ p.redacted {
         transform 0.2s ease,
         background 0.2s ease,
         border-color 0.2s ease;
-    position: relative;
+    counter-increment: file;
 }
 
-.records article:nth-child(2) {
+.records li:nth-child(1) {
     --r: -0.4;
 }
 
-.records article:nth-child(3) {
+.records li:nth-child(2) {
     --r: 0.6;
 }
 
-.records article:nth-child(4) {
+.records li:nth-child(3) {
     --r: -0.2;
 }
 
-.records article:nth-child(5) {
+.records li:nth-child(4) {
     --r: 0.3;
 }
 
-.records article:nth-child(6) {
+.records li:nth-child(5) {
     --r: -0.5;
 }
 
-.records article:nth-child(7) {
+.records li:nth-child(6) {
     --r: 0.2;
 }
 
-.records article:nth-child(8) {
+.records li:nth-child(7) {
     --r: 0.4;
 }
 
-.records article:nth-child(9) {
+.records li:nth-child(8) {
     --r: -0.3;
 }
 
-.records article:hover {
+.records li:hover {
     transform: rotate(0deg) translateY(-4px);
     border-color: var(--accent);
     background: rgba(255, 255, 255, 0.35);
 }
 
-.records article.redacted > * {
+.records li.redacted > * {
     background: #111;
     color: transparent;
     user-select: none;
     cursor: default;
 }
 
-.records article.redacted > *:hover {
+.records li.redacted > * p {
     color: transparent;
 }
 
-.records article {
-    counter-increment: file;
+.records li.redacted > *:hover {
+    color: transparent;
 }
 
-.records article::before {
+.records li::before {
     content: "FILE " counter(file, decimal-leading-zero);
     display: inline-block;
     margin-bottom: 1rem;
@@ -223,20 +245,11 @@ p.redacted {
 }
 
 .records a {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    display: block;
     text-decoration: none;
     color: var(--ink);
     font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
-}
-
-.records article:not(.redacted) a::after {
-    content: "";
-    position: absolute;
-    inset: 0;
 }
 
 .records a:hover {
@@ -244,14 +257,23 @@ p.redacted {
 }
 
 .records i {
-    width: 24px;
-    text-align: center;
+    font-size: 1.25em;
+    vertical-align: middle;
+    margin-right: 1rem;
 }
 
-.records p {
-    margin: 0;
+.records a > span {
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+    vertical-align: middle;
+}
+
+.records a p {
+    margin: 0.75rem 0 0;
     color: var(--faded);
     line-height: 1.6;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 footer {
@@ -264,6 +286,11 @@ footer {
     font-size: 0.8rem;
     letter-spacing: 0.12em;
     color: var(--faded);
+    text-transform: uppercase;
+}
+
+footer p {
+    margin: 0;
 }
 
 footer a {
@@ -287,10 +314,6 @@ footer a {
     }
 
     footer {
-        flex-direction: column;
-    }
-
-    .topline {
         flex-direction: column;
     }
 }
