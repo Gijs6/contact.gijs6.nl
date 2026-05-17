@@ -234,7 +234,7 @@ p.redacted {
 }
 
 .records article:not(.redacted) a::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
 }
