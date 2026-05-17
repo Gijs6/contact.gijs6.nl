@@ -137,6 +137,7 @@ p.redacted {
 
 .records {
     padding: 2rem;
+    counter-reset: file;
 }
 
 .records h2 {
@@ -207,7 +208,12 @@ p.redacted {
     color: transparent;
 }
 
-.file-id {
+.records article {
+    counter-increment: file;
+}
+
+.records article::before {
+    content: "FILE " counter(file, decimal-leading-zero);
     display: inline-block;
     margin-bottom: 1rem;
     font-size: 0.8rem;
