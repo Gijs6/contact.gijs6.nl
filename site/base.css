@@ -157,6 +157,7 @@ p.redacted {
         transform 0.2s ease,
         background 0.2s ease,
         border-color 0.2s ease;
+    position: relative;
 }
 
 .records article:nth-child(2) {
@@ -230,6 +231,12 @@ p.redacted {
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
+}
+
+.records article:not(.redacted) a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
 }
 
 .records a:hover {
