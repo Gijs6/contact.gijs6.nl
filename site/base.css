@@ -1,9 +1,29 @@
+@font-face {
+    font-family: "Manrope Variable";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 200 800;
+    src: url("https://cdn.gijs6.nl/fonts/manrope-latin-ext.woff2") format("woff2-variations");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: "Manrope Variable";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 200 800;
+    src: url("https://cdn.gijs6.nl/fonts/manrope-latin.woff2") format("woff2-variations");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
-    --paper: #d8ccb3;
-    --ink: #161616;
-    --accent: #7a0000;
-    --border: #2a2a2a;
-    --faded: #5c564d;
+    --bg: #f4f2ed;
+    --surface: #ffffff;
+    --ink: #1c1c1c;
+    --faded: #767b84;
+    --border: rgba(0, 0, 0, 0.1);
+    --accent: #33415c;
+    --accent-ink: #ffffff;
 }
 
 * {
@@ -11,309 +31,106 @@
 }
 
 html {
-    font-size: 18px;
+    font-size: 17px;
 }
 
 body {
     margin: 0;
-    padding: 3rem 1.5rem;
-    background: radial-gradient(circle at top, #e7dbc2 0%, #d8ccb3 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1.25rem;
+    background: var(--bg);
     color: var(--ink);
-    font-family: "IBM Plex Mono", monospace;
-    overflow-x: hidden;
+    font-family: "Manrope Variable", sans-serif;
 }
 
-.noise {
-    position: fixed;
-    inset: 0;
-    opacity: 0.08;
-    pointer-events: none;
-    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #000 1px, transparent 2px);
-    background-size: 4px 4px;
-}
-
-.scanline {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.05) 50%, transparent 100%);
-    background-size: 100% 8px;
-    opacity: 0.25;
-}
-
-.dossier {
-    max-width: 900px;
-    margin: 0 auto;
-    border: 3px solid var(--border);
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(2px);
-    box-shadow:
-        0 0 0 1px rgba(0, 0, 0, 0.2),
-        0 20px 60px rgba(0, 0, 0, 0.3);
-    position: relative;
-    transform: rotate(-0.4deg);
-}
-
-header {
-    padding: 2rem;
-    border-bottom: 2px dashed var(--border);
-}
-
-.topline {
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    margin: 0 0 2rem;
-    color: var(--faded);
-    text-transform: uppercase;
-}
-
-.stamp {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    border: 4px solid var(--accent);
-    color: var(--accent);
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-    transform: rotate(12deg);
-    opacity: 0.8;
-    pointer-events: none;
-    margin: 0;
-    text-transform: uppercase;
-}
-
-.subject {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.subject img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border: 3px solid var(--border);
-    filter: grayscale(100%) contrast(120%);
-}
-
-.subject-info h1 {
-    margin: 0 0 1rem;
-    font-family: "Special Elite", serif;
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.meta {
-    display: grid;
-    gap: 0.5rem;
-}
-
-.meta div {
-    display: flex;
-    gap: 0.5em;
-}
-
-.meta dt {
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.meta dt::after {
-    content: ":";
-}
-
-.meta dd {
-    margin: 0;
-    text-transform: uppercase;
-}
-
-.notes {
-    padding: 2rem;
-    border-bottom: 2px dashed var(--border);
-    line-height: 1.7;
-}
-
-.notes p {
-    margin: 0;
-}
-
-.notes p.redacted {
-    margin-top: 1em;
-}
-
-p.redacted {
-    display: inline-block;
-    background: #111;
-    color: transparent;
-    user-select: none;
-}
-
-.records {
-    padding: 2rem;
-    counter-reset: file;
-}
-
-.records h2 {
-    margin-top: 0;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-}
-
-.records ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.records li {
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border: 2px solid rgba(0, 0, 0, 0.25);
-    background: rgba(255, 255, 255, 0.15);
-    transform: rotate(calc(var(--r, 0) * 1deg));
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
-    counter-increment: file;
-}
-
-.records li:nth-child(1) {
-    --r: -0.4;
-}
-
-.records li:nth-child(2) {
-    --r: 0.6;
-}
-
-.records li:nth-child(3) {
-    --r: -0.2;
-}
-
-.records li:nth-child(4) {
-    --r: 0.3;
-}
-
-.records li:nth-child(5) {
-    --r: -0.5;
-}
-
-.records li:nth-child(6) {
-    --r: 0.2;
-}
-
-.records li:nth-child(7) {
-    --r: 0.4;
-}
-
-.records li:nth-child(8) {
-    --r: -0.3;
-}
-
-.records li:hover {
-    transform: rotate(0deg) translateY(-4px);
-    border-color: var(--accent);
-    background: rgba(255, 255, 255, 0.35);
-}
-
-.records li.redacted > * {
-    background: #111;
-    color: transparent;
-    user-select: none;
-    cursor: default;
-}
-
-.records li.redacted > * p {
-    color: transparent;
-}
-
-.records li.redacted > *:hover {
-    color: transparent;
-}
-
-.records li::before {
-    content: "FILE " counter(file, decimal-leading-zero);
-    display: inline-block;
-    margin-bottom: 1rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    color: var(--faded);
-}
-
-.records a {
-    display: block;
-    text-decoration: none;
-    color: var(--ink);
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.records a:hover {
-    color: var(--accent);
-}
-
-.records i {
-    font-size: 1.25em;
-    vertical-align: middle;
-    margin-right: 1rem;
-}
-
-.records a > span {
-    text-transform: uppercase;
-    overflow-wrap: break-word;
-    vertical-align: middle;
-}
-
-.records a p {
-    margin: 0.75rem 0 0;
-    color: var(--faded);
-    line-height: 1.6;
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-footer {
-    padding: 2rem;
-    border-top: 2px dashed var(--border);
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    color: var(--faded);
-    text-transform: uppercase;
-}
-
-footer p {
-    margin: 0;
-}
-
-footer a {
+a {
     color: inherit;
 }
 
-@media (max-width: 700px) {
-    body {
-        padding: 1rem;
-    }
+.page {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
 
-    .subject {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.who {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
 
-    .stamp {
-        position: static;
-        display: inline-block;
-        margin-bottom: 2rem;
-    }
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
 
-    footer {
-        flex-direction: column;
+.who .name {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.9rem 1.1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.contact-label {
+    font-size: 0.8rem;
+}
+
+.contact-value {
+    font-weight: 600;
+    word-break: break-word;
+}
+
+a.contact:hover {
+    border-color: var(--accent);
+}
+
+#mail-primary span:nth-child(even),
+#mail-alt1 span:nth-child(even),
+#mail-alt2 span:nth-child(even) {
+    display: none;
+}
+
+.contact-primary {
+    background: var(--accent);
+    color: var(--accent-ink);
+}
+
+.contact-primary .contact-label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-primary .contact-value {
+    font-size: 1.35rem;
+}
+
+.contact-primary:hover {
+    filter: brightness(1.08);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+}
+
+@media (max-width: 420px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
 }

@@ -4,165 +4,64 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Subject dossier - Gijs6</title>
+        <title>Gijs ten Berg</title>
 
-        <meta name="description" content="Released subject dossier regarding Gijs ten Berg." />
+        <meta name="description" content="Contact page for Gijs ten Berg." />
 
         <link rel="icon" type="image/jpeg" href="/pfp-100.jpg" />
 
         <link rel="stylesheet" href="/skeleton.css" />
         <link rel="stylesheet" href="/base.css" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&family=Special+Elite&display=swap" rel="stylesheet" />
-
-        <script src="https://kit.fontawesome.com/4a94c21782.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://cdn.gijs6.nl" />
     </head>
 
     <body>
-        <div class="noise" aria-hidden="true"></div>
-        <div class="scanline" aria-hidden="true"></div>
-
-        <main class="dossier">
-            <header>
-                <p class="topline">Department of Digital Observation</p>
-
-                <p class="stamp">Partly declassified</p>
-
-                <section class="subject" aria-labelledby="subject-name">
-                    <img src="/pfp-1000.jpg" alt="Subject photograph" />
-
-                    <div class="subject-info">
-                        <h1 id="subject-name">Gijs ten Berg</h1>
-
-                        <dl class="meta">
-                            <div>
-                                <dt>Status</dt>
-                                <dd>Active</dd>
-                            </div>
-                            <div>
-                                <dt>Origin</dt>
-                                <dd>Netherlands</dd>
-                            </div>
-                        </dl>
-                    </div>
-                </section>
+        <main class="page">
+            <header class="who">
+                <img class="avatar" src="/pfp-100.jpg" srcset="/pfp-1000.jpg 1000w, /pfp-100.jpg 100w" sizes="40px" alt="Gijs ten Berg" width="40" height="40" />
+                <span class="name">Gijs ten Berg</span>
             </header>
 
-            <section class="notes" aria-label="Notes">
-                <p>Subject ocasionally active in open-source environments. Maintains multiple public communication and archival channels.</p>
+            <a class="contact contact-primary" href="/mail">
+                <span class="contact-label">Email</span>
+                <span class="contact-value" id="mail-primary"><span>m</span><span>z</span><span>e</span><span>x</span><span>@</span><span>v</span><span>g</span><span>x</span><span>i</span><span>f</span><span>j</span><span>f</span><span>s</span><span>f</span><span>6</span><span>b</span><span>.</span><span>k</span><span>n</span><span>x</span><span>l</span><span>f</span></span>
+            </a>
 
-                <p class="redacted">Additional information remains unavailable.</p>
-            </section>
-
-            <section class="records" aria-labelledby="records-heading">
-                <h2 id="records-heading">Known channels</h2>
-
-                <ul>
-                    <li>
-                        <a href="/mail" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-at" aria-hidden="true"></i>
-                            <span>Communication relay</span>
-                            <p>Electronic mail endpoint - main communication method</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://github.com/Gijs6" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-github" aria-hidden="true"></i>
-                            <span>Source archive</span>
-                            <p>Primary software repository</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://gitlab.com/ggijs" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-gitlab" aria-hidden="true"></i>
-                            <span>Source archive</span>
-                            <p>Additional software repository</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://codeberg.org/Gijs6" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-code" aria-hidden="true"></i>
-                            <span>Source archive</span>
-                            <p>Additional software repository</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="mailto:gijs.is@enorm.moe" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-at" aria-hidden="true"></i>
-                            <span>Second communication relay - gijs.is@enorm.moe</span>
-                            <p>Another electronic mail endpoint - apparently because subject thinks he is funny</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://gijs6.nl" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
-                            <span>Public presence</span>
-                            <p>Official outward-facing platform</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://www.linkedin.com/in/gijs-ten-berg-29072a352/" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-                            <span>Professional record</span>
-                            <p>Public occupational history</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="mailto:gijs6@dupunkto.org" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-at" aria-hidden="true"></i>
-                            <span>Third communication relay - gijs6@dupunkto.org</span>
-                            <p>Yet another electronic mail endpoint - subject seems to be part of a larger collective (still under investigation)</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://en.wikipedia.org/wiki/User:Gijsz" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-wikipedia-w" aria-hidden="true"></i>
-                            <span>Public documentation</span>
-                            <p>Associated historical records</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://keys.gijs6.nl/ssh" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-key" aria-hidden="true"></i>
-                            <span>SSH key</span>
-                            <p>Public key for remote access verification</p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://keys.gijs6.nl/gpg" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-fingerprint" aria-hidden="true"></i>
-                            <span>GPG key</span>
-                            <p>Cryptographic signature for identity verification</p>
-                        </a>
-                    </li>
-
-                    <li class="redacted">
-                        <a href="https://craptacular.eu" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-user-secret" aria-hidden="true"></i>
-                            <span>Unknown assemblage</span>
-                            <p>Still under investigation</p>
-                        </a>
-                    </li>
-                </ul>
-            </section>
-
-            <footer>
-                <p>Release authorization: granted</p>
-
-                <p>Gijs ten Berg - <a href="https://unlicense.org/" target="_blank" rel="noopener noreferrer">Unlicensed</a></p>
-            </footer>
+            <div class="contact-grid">
+                <a class="contact" href="https://github.com/Gijs6" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">Gijs6</span>
+                </a>
+                <a class="contact" href="https://gitlab.com/ggijs" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-label">GitLab</span>
+                    <span class="contact-value">ggijs</span>
+                </a>
+                <a class="contact" href="https://codeberg.org/Gijs6" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-label">Codeberg</span>
+                    <span class="contact-value">Gijs6</span>
+                </a>
+                <a class="contact" href="https://www.linkedin.com/in/gijs-ten-berg-29072a352/" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">Gijs ten Berg</span>
+                </a>
+                <div class="contact">
+                    <span class="contact-label">Alt. email</span>
+                    <span class="contact-value" id="mail-alt1"><span>g</span><span>q</span><span>i</span><span>x</span><span>j</span><span>x</span><span>s</span><span>w</span><span>.</span><span>z</span><span>i</span><span>v</span><span>s</span><span>v</span><span>@</span><span>k</span><span>e</span><span>q</span><span>n</span><span>z</span><span>o</span><span>b</span><span>r</span><span>b</span><span>m</span><span>w</span><span>.</span><span>f</span><span>m</span><span>v</span><span>o</span><span>q</span><span>e</span><span>q</span></span>
+                </div>
+                <div class="contact">
+                    <span class="contact-label">Alt. email</span>
+                    <span class="contact-value" id="mail-alt2"><span>g</span><span>k</span><span>i</span><span>z</span><span>j</span><span>w</span><span>s</span><span>f</span><span>6</span><span>x</span><span>@</span><span>q</span><span>d</span><span>f</span><span>u</span><span>v</span><span>p</span><span>k</span><span>u</span><span>k</span><span>n</span><span>f</span><span>k</span><span>f</span><span>t</span><span>b</span><span>o</span><span>z</span><span>.</span><span>k</span><span>o</span><span>z</span><span>r</span><span>b</span><span>g</span><span>q</span></span>
+                </div>
+                <a class="contact" href="https://keys.gijs6.nl/ssh" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-label">SSH key</span>
+                    <span class="contact-value">keys.gijs6.nl/ssh</span>
+                </a>
+                <a class="contact" href="https://keys.gijs6.nl/gpg" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-label">GPG key</span>
+                    <span class="contact-value">keys.gijs6.nl/gpg</span>
+                </a>
+            </div>
         </main>
     </body>
 </html>
