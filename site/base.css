@@ -18,12 +18,10 @@
 
 :root {
     --bg: #f4f2ed;
-    --surface: #ffffff;
     --ink: #1c1c1c;
     --faded: #767b84;
     --border: rgba(0, 0, 0, 0.1);
     --accent: #33415c;
-    --accent-ink: #ffffff;
 }
 
 * {
@@ -43,6 +41,7 @@ body {
     background: var(--bg);
     color: var(--ink);
     font-family: "Manrope Variable", sans-serif;
+    font-weight: 500;
 }
 
 a {
@@ -72,32 +71,57 @@ a {
 }
 
 .who .name {
-    font-weight: 600;
+    font-weight: 800;
     font-size: 1.2rem;
 }
 
-.contact {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    padding: 0.9rem 1.1rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.contact-label {
-    font-size: 0.8rem;
-}
-
-.contact-value {
+.intro {
+    margin: 0;
+    color: var(--faded);
     font-weight: 600;
+    line-height: 1.5;
+}
+
+.contacts {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1.25rem;
+    row-gap: 0.7rem;
+    align-items: baseline;
+}
+
+.contacts dt {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--faded);
+    white-space: nowrap;
+}
+
+.contacts dd {
+    margin: 0;
+    font-weight: 800;
     word-break: break-word;
 }
 
-a.contact:hover {
-    border-color: var(--accent);
+.contacts a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 3px;
+}
+
+.contacts a:hover {
+    text-decoration-color: var(--accent);
+}
+
+.contacts dd.primary {
+    font-size: 1.15rem;
+    color: var(--accent);
+}
+
+.contacts dd.primary a {
+    text-decoration-color: currentColor;
 }
 
 #mail-primary span:nth-child(even),
@@ -106,31 +130,13 @@ a.contact:hover {
     display: none;
 }
 
-.contact-primary {
-    background: var(--accent);
-    color: var(--accent-ink);
+.note {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--faded);
 }
 
-.contact-primary .contact-label {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.contact-primary .contact-value {
-    font-size: 1.35rem;
-}
-
-.contact-primary:hover {
-    filter: brightness(1.08);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.6rem;
-}
-
-@media (max-width: 420px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
+.note a {
+    color: inherit;
 }
